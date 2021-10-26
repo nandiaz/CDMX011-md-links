@@ -53,8 +53,8 @@ fileObjs = fs.readdirSync('../CDMX011-md-links', { withFileTypes: true });
 //-----------Solo para devolver nombres de archivo con la extensión ".md"--------//
 
 files = fs.readdirSync('../CDMX011-md-links');
-console.log('\Filenames with the .md extension: ')
- files.forEach(file =>{
-     if(path.extname(file) == '.md')
-     console.log(file);
- })
+// console.log('\Filenames with the .md extension: ')
+//  files.forEach(file =>{
+//      if(path.extname(file) == '.md')
+//      console.log(file);
+//  })
