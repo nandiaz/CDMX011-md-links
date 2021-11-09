@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const {readFileSync} = require ('fs')
 const markdownLinkExtractor = require ('./node_modules/markdown-link-extractor');
+const fetch = require("node-fetch");
 // que ejecutes el comando node index.js rutadearchivo
 // recibir la ruta del archivo e imprimes el archivo md en consola
 
@@ -33,8 +34,8 @@ const markdown = readFileSync('README.md', { encoding: 'utf8' });
 //--------¿Es archivo o carpeta?----------//
 const statsObj = fs.statSync('../CDMX011-md-links');
 // console.log(statsObj);
- console.log('Path is File:', statsObj.isFile());
- console.log('Path is Directory:' , statsObj.isDirectory());
+//  console.log('Path is File:', statsObj.isFile());
+//  console.log('Path is Directory:' , statsObj.isDirectory());
 
 //----------Mostrar si es un directorio----------//
 const fileNames = fs.readdirSync("./node_modules");
@@ -58,3 +59,16 @@ files = fs.readdirSync('../CDMX011-md-links');
 //      if(path.extname(file) == '.md')
 //      console.log(file);
 //  })
+
+//----------Validate para un link------------------//
+fetch('https://nodejs.org/es/')
+  .then(function(response){
+    if(response.status == 200){
+        console.log("Ok " + response.status)
+    }else{
+        console.log("Fail " + response.status)
+    }
+
+  })
+  
+
