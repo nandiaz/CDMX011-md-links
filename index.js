@@ -3,7 +3,7 @@ const fs = require('fs');
 //const ruta = process.argv[2];
 const {files} = require('./lib/findFiles');
 const {captureLinks} = require('./lib/links');
-const {validate} = require('./lib/validate')
+const {validateAll} = require('./lib/validate')
 const figlet = require('figlet'); //Mensaje banner
 const chalk = require('chalk');  //colores
  const readlineSync = require('readline-sync');
@@ -16,7 +16,7 @@ const chalk = require('chalk');  //colores
 //console.log(links)
 //const file = files(route);
 //console.log(file)
-//const validacion = validate(links);
+//const validacion = validateAll(links);
 //console.log(validacion)
  
 //Mostrar un banner con un mensaje formado por caracteres.
@@ -63,7 +63,7 @@ switch (opc) {
     break;
     case "--validate":
     process.stdout.write("\033c");
-    console.log(validate(captureLinks(files(route))));
+    console.log(validateAll(captureLinks(files(route))));
     case "":
     process.stdout.write("\033c");
     console.log("Escoge una opcion")
