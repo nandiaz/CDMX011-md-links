@@ -37,7 +37,8 @@ figlet.text('MD-LINKS', {
 });
 
 }
-// msn()
+msn() 
+
  const questions = () => {  
 
 const route = readlineSync.question("Ingresa la ruta ");
